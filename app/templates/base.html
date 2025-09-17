@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header class="container shadow rounded-2 p-4 my-4 d-flex justify-content-between">
+
+        <h3> Prova SAEP </h3>
+
+        <nav class="nav gap-2 my-md-0">
+            <a href="{{ url_for ('turmas') }}" class="btn btn-outline-dark">Listar turmas</a>
+        </nav>
+        <!-- Usuário -->
+        <div>
+            {% if current_user.is_authenticated %}
+
+            <span class="p-2 bg-light rounded-2"> {{ current_user.nome }} {{ current_user.sobrenome }} </span>
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Sair</a>
+
+            {% else %}
+            <a class="btn btn-outline-dark px-4" href="{{url_for('LoginPage')}}">Login</a>
+            <a class="btn btn-outline-dark px-4" href="{{url_for('RegisterPage')}}">Cadastro</a>
+            {% endif %}
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

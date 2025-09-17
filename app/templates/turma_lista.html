@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %} {% endblock %}
+
+<!-- Body -->
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <h1 class="mt-2">Lista de Turmas</h1>
+        <p>Deseja cadastrar uma turma? <span><a href="{{url_for('turmas_cadastro')}}">Clique aqui</a></span></p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-12 mt-3">
+        <table class="table">
+            <thead>
+                <th class="col-3">ID</th>
+                <th class="col-3">Nome</th>
+                <th class="col-1"></th>
+            </thead>
+
+            <tbody>
+                {% for linha in context['dados'] %}
+                <tr>x
+                    <td class="col-3">{{linha.id}}</td>
+                    <td class="col-3">{{linha.nome}}</td>
+                    <td class="col-1">
+                        <!-- Excluir -->
+                        <form action="{{url_for('excluir_turma', id=linha.id)}}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                        <!-- Visualizar -->
+                        <a href="{{url_for('visualizar_turma', id=linha.id)}}" class="btn btn-outline-dark">Visualizar</a>
+                    </td>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
