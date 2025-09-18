@@ -10,7 +10,7 @@
     <div class="row text-center">
         <h1 class="mt-2">VISUALIZAÇÃO</h1>
         {% if current_user.email == "professor@gmail.com" %}
-        <p>Cadastre atividades <span><a href="{{url_for('atividade_turma')}}">aqui</a></span></p>
+        <p>Crie atividades <a href="{{ url_for('atividade_turma', turma_id=turma.id) }}">aqui</a></p>
         {% endif %}
     </div>
 </div>
@@ -21,16 +21,21 @@
     <div class="mt-5">
         <table class="table">
             <thead>
-                <th class="col-4">Número</th>
-                <th class="col-6">Nome</th>
+                <th class="col-3">Número</th>
+                <th class="col-9">Nome</th>
+                <th class="col-1"></th>
             </thead>
 
             <tbody>
-                {% for linha in context['dados'] %}
+                {% for linha in atividades %}
                 <tr>
                     <td>{{linha.id}}</td>
                     <td>{{linha.nome}}</td>
-                    {% endfor %}
+                    <td>
+                        <a class="btn btn-outline-dark" href="{{ url_for('atividade_detalhes', turma_id=turma.id) }}">Detalhes</a>
+                    </td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

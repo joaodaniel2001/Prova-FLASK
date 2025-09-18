@@ -12,7 +12,7 @@
         {% if current_user.email == "professor@gmail.com" %}
         <p>Deseja cadastrar uma turma? <span><a href="{{url_for('turmas_cadastro')}}">Clique aqui</a></span></p>
         {% endif %}
-        
+
     </div>
 </div>
 
@@ -38,8 +38,9 @@
                         </form>
                         {% endif %}
                         <!-- Visualizar -->
-                        <a href="{{url_for('visualizar_turma', id=linha.id)}}"
+                        <a href="{{ url_for('visualizar_atividades_turma', turma_id=linha.id) }}"
                             class="btn btn-outline-dark">Visualizar</a>
+
                     </td>
                     {% endfor %}
             </tbody>
