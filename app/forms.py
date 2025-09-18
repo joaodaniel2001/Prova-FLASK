@@ -73,10 +73,10 @@ class AtividadeForm (FlaskForm):
     btnSubmit = SubmitField('Cadastrar')
         
     def save (self):
-        turma = Turma (
+        atividade = Atividade (
             nome = self.nome.data
         )
 
-        db.session.add(turma)
+        db.session.add(atividade)
         db.session.commit()
-        return (turma)
+        return (atividade)

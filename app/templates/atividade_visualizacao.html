@@ -9,22 +9,26 @@
 <div class="container">
     <div class="row text-center">
         <h1 class="mt-2">VISUALIZAÇÃO</h1>
-        <p>Cadastre atividades <span><a href="">aqui</a></span></p>
+        <p>Cadastre atividades <span><a href="{{url_for('atividade_turma')}}">aqui</a></span></p>
     </div>
 </div>
 
 <div class="container mt-5">
     <p><b>Turma:</b> {{turma.nome}}</p>
 
-    <div class="col-12 mt-3">
+    <div class="mt-5">
         <table class="table">
             <thead>
-                <th class="col-1">Número</th>
-                <th class="col-1">Nome</th>
+                <th class="col-4">Número</th>
+                <th class="col-6">Nome</th>
             </thead>
 
             <tbody>
-                
+                {% for linha in context['dados'] %}
+                <tr>
+                    <td>{{linha.id}}</td>
+                    <td>{{linha.nome}}</td>
+                    {% endfor %}
             </tbody>
         </table>
     </div>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %} {% endblock %}
+
+<!-- Body -->
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <h1 class="mt-2">CADASTRO</h1>
+        <p>Cadastre sua atividade</p>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-3 border p-4 mt-4">
+        <form method="post" class="border.rounded.p-4.shadow-sm">
+            {{ form.csrf_token }}
+
+            <!-- Nome -->
+            <div class="mb-3">
+                {{ form.nome.label(class="form-label")}}
+                {{ form.nome(class="form-control")}}
+            </div>
+
+            <!-- Enviar -->
+            {{ form.btnSubmit(class="btn btn-outline-dark w-100 mt-3") }}
+
+        </form>
+        <div class="text-center mt-4">
+            <p>Já tem conta? <span><a href="{{url_for('LoginPage')}}">Faça login</a></span></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

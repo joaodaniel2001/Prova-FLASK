@@ -58,12 +58,22 @@ def excluir_turma(id):
     db.session.commit()
     return redirect(url_for('turmas'))
 
-
-# Excluir Turma
-@app.route('/turma/visualizar/<int:id>', methods=['GET', 'POST'])
+# Visualizar Atividades
+@app.route('/turma/atividade/visualizar/<int:id>', methods=['GET', 'POST'])
 @login_required
 def visualizar_turma(id):
+    atividade = Atividade.query.get_or_404(id)
     turma = Turma.query.get_or_404(id)
-    dados = Turma.query.order_by(Turma.id)
+    dados = Atividade.query.order_by(Atividade.id)
     context = {'dados': dados.all()}
-    return render_template('turma_atividades.html', turma=turma, context=context)
+    return render_template('atividade_visualizacao.html', atividade=atividade, context=context, turma=turma)
+
+# Criar Atividades
+@app.route("/turma/atividade/cadastro", methods=["GET", "POST"])
+@login_required
+def atividade_turma():
+    form = AtividadeForm()
+    if form.validate_on_submit():
+        form.save()
+        return redirect(url_for('turmas'))
+    return render_template("atividade_cadastro.html", form=form)
