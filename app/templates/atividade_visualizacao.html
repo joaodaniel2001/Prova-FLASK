@@ -29,13 +29,17 @@
             <tbody>
                 {% for linha in atividades %}
                 <tr>
-                    <td>{{linha.id}}</td>
-                    <td>{{linha.nome}}</td>
+                    <td>{{ linha.id }}</td>
+                    <td>{{ linha.nome }}</td>
                     <td>
-                        <a class="btn btn-outline-dark" href="{{ url_for('atividade_detalhes', atividade_id=atividade.id) }}">Detalhes</a>
+                        <a class="btn btn-outline-dark"
+                            href="{{ url_for('atividade_detalhes', atividade_id=linha.id) }}">
+                            Detalhes
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}
+
             </tbody>
         </table>
     </div>
