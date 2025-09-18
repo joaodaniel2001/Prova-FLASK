@@ -1,24 +1,18 @@
 {% extends "base.html" %}
 
-<!-- Title -->
-{% block title %} {% endblock %}
+{% block title %}Detalhes da Atividade{% endblock %}
 
-<!-- Body -->
 {% block content %}
-
 <div class="container">
     <div class="row text-center">
-        <h1 class="mt-2">DETALHES</h1>
+        <h1 class="mt-2">DETALHES DA ATIVIDADE</h1>
     </div>
 </div>
 
 <div class="container mt-5">
     <div class="mt-5">
-        {% for linha in atividades %}
-        <p>{{linha.detalhes}}</p>
-        {% endfor %}
+        <h4>{{ atividade.nome }}</h4>
+        <p>{{ atividade.detalhes }}</p>
     </div>
-
 </div>
-
 {% endblock %}

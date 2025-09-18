@@ -78,9 +78,8 @@ def atividade_turma(turma_id):
     return render_template("atividade_cadastro.html", form=form)
 
 # Detalhes Atividades
-@app.route("/turma/atividade/detalhes/<int:turma_id>", methods=["GET", "POST"])
+@app.route("/turma/atividade/detalhes/<int:atividade_id>", methods=["GET"])
 @login_required
-def atividade_detalhes(turma_id):
-    turma = Turma.query.get_or_404(turma_id)
-    atividades = Atividade.query.filter_by(turma_id=turma.id).order_by(Atividade.id).all()
-    return render_template("atividade_detalhes.html", atividades=atividades)
+def atividade_detalhes(atividade_id):
+    atividade = Atividade.query.get_or_404(atividade_id)
+    return render_template("atividade_detalhes.html", atividade=atividade)
