@@ -1,5 +1,5 @@
 from app import app, db
-from flask import render_template, url_for, request, redirect
+from flask import render_template, url_for, request, redirect, flash
 from app.forms import *
 from flask_login import login_user, logout_user, current_user, login_required
 from sqlalchemy import or_
@@ -20,9 +20,12 @@ def LoginPage ():
 def RegisterPage ():
     form = UserForm ()
     if form.validate_on_submit():
-        user = form.save()
-        login_user(user, remember=True)
-        return redirect(url_for('turmas'))
+        try:
+            user = form.save()
+            login_user(user, remember=True)
+            return redirect(url_for('turmas'))
+        except Exception as e:
+            flash("Já existe um registro com esse email", "danger")
     return render_template ("usuario_cadastro.html", form=form)
 
 # Deslogar

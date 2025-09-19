@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField
 from wtforms.validators import DataRequired, Email, EqualTo, ValidationError
 from flask_bcrypt import Bcrypt
+from flask import flash
 
 bcrypt = Bcrypt()
 
@@ -19,7 +20,7 @@ class UserForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
-            raise ValidationError('E-mail já cadastrado.')
+            return
 
     def save(self):
         senha_hash = bcrypt.generate_password_hash(self.senha.data).decode('utf-8')
