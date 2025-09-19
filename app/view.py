@@ -20,12 +20,13 @@ def LoginPage ():
 def RegisterPage ():
     form = UserForm ()
     if form.validate_on_submit():
-        try:
-            user = form.save()
-            login_user(user, remember=True)
-            return redirect(url_for('turmas'))
-        except Exception as e:
-            flash("Já existe um registro com esse email", "danger")
+        user = form.save()
+        login_user(user, remember=True)
+        flash("Cadastro realizado com sucesso!", "success")
+        return redirect(url_for('turmas'))
+
+    elif form.errors:
+        flash("Por favor, corrija os erros no formulário.", "danger")
     return render_template ("usuario_cadastro.html", form=form)
 
 # Deslogar

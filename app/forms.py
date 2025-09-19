@@ -20,7 +20,8 @@ class UserForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
-            return
+            raise ValidationError("Este e-mail já está cadastrado. Por favor, utilize outro.")
+
 
     def save(self):
         senha_hash = bcrypt.generate_password_hash(self.senha.data).decode('utf-8')
