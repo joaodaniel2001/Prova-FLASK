@@ -3,7 +3,6 @@ from flask import render_template, url_for, request, redirect, flash
 from app.forms import *
 from flask_login import login_user, logout_user, current_user, login_required
 from sqlalchemy import or_
-from flask_login import current_user
 
 # Página de Login
 @app.route ('/', methods=['GET', 'POST'])

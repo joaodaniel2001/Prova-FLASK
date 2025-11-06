@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-11-06T09:13:04.608365" rpa="false" schemaversion="5">
+<suite id="s1" name="SeleniumTest" source="C:\Users\joao_d_lima\Documents\GitHub\Prova-FLASK\SeleniumTest.robot">
+<test id="s1-t1" name="Realizar o cadastro com credenciais válidas" line="32">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:04.844514" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/cadastro'.</msg>
+<arg>${URL_REGISTER}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:04.844274" elapsed="1.396229"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.241077" elapsed="0.043152"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.284874" level="INFO">Typing text 'João' into text field 'id=nome'.</msg>
+<arg>id=nome</arg>
+<arg>${VALID_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.284510" elapsed="0.148823"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.434052" level="INFO">Typing text 'Daniel' into text field 'id=sobrenome'.</msg>
+<arg>id=sobrenome</arg>
+<arg>${VALID_SURNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.433672" elapsed="0.072013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.506283" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.506003" elapsed="0.149117"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.655884" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
+<arg>id=senha</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.655501" elapsed="0.071452"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.728934" level="INFO">Typing text '123' into text field 'id=confirmacao_senha'.</msg>
+<arg>id=confirmacao_senha</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.728432" elapsed="0.084332"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:06.813410" level="INFO">Clicking button 'id=btnSubmit'.</msg>
+<arg>id=btnSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.813131" elapsed="0.077254"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${SUCESS_MESSAGE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-06T09:13:06.890704" elapsed="0.505947"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:07.401638" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
+<arg>${URL_TURMA}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:07.397288" elapsed="0.004480"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-06T09:13:07.402001" elapsed="2.122774"/>
+</kw>
+<tag>Cadastro</tag>
+<tag>Sucesso</tag>
+<tag>UI</tag>
+<status status="PASS" start="2025-11-06T09:13:04.843324" elapsed="4.681846"/>
+</test>
+<test id="s1-t2" name="Realizar um Login com credenciais válidas" line="58">
+<kw name="Efetuar Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:09.527029" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:09.526820" elapsed="1.269053"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-06T09:13:10.796179" elapsed="0.037222"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:10.834015" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:10.833680" elapsed="0.195482"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:11.029672" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
+<arg>id=senha</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:11.029371" elapsed="0.072910"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:11.102627" level="INFO">Clicking button 'id=btnSubmit'.</msg>
+<arg>id=btnSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:11.102459" elapsed="0.075973"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${SUCESS_MESSAGE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-06T09:13:11.178663" elapsed="0.497260"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:11.682589" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
+<arg>${URL_TURMA}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:11.676066" elapsed="0.006645"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-11-06T09:13:09.526497" elapsed="2.156435"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-06T09:13:11.683368" elapsed="2.123052"/>
+</kw>
+<tag>Login</tag>
+<tag>Sucesso</tag>
+<tag>UI</tag>
+<status status="PASS" start="2025-11-06T09:13:09.526007" elapsed="4.281467"/>
+</test>
+<test id="s1-t3" name="Realizar Logout com Sucesso" line="67">
+<kw name="Efetuar Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:13.813843" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:13.813035" elapsed="1.195818"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.009091" elapsed="0.122431"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:15.131935" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.131695" elapsed="0.117018"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:15.249132" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
+<arg>id=senha</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.248909" elapsed="0.081178"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:15.330650" level="INFO">Clicking button 'id=btnSubmit'.</msg>
+<arg>id=btnSubmit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.330443" elapsed="0.376761"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${SUCESS_MESSAGE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.707458" elapsed="0.017502"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:15.730612" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
+<arg>${URL_TURMA}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.725109" elapsed="0.005579"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-11-06T09:13:13.811580" elapsed="1.919193"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-11-06T09:13:15.731376" level="INFO">Clicking link 'Sair'.</msg>
+<arg>Sair</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.731121" elapsed="0.135070"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${LOGOUT_SUCCESS_TEXT}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.866471" elapsed="0.012414"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-06T09:13:15.879184" elapsed="2.133797"/>
+</kw>
+<tag>Logout</tag>
+<tag>Sucesso</tag>
+<tag>UI</tag>
+<status status="PASS" start="2025-11-06T09:13:13.809773" elapsed="4.203748"/>
+</test>
+<doc>Teste para verificar o sistema de Cadastro e Login</doc>
+<status status="PASS" start="2025-11-06T09:13:04.610067" elapsed="13.404360"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Cadastro</stat>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Logout</stat>
+<stat pass="3" fail="0" skip="0">Sucesso</stat>
+<stat pass="3" fail="0" skip="0">UI</stat>
+</tag>
+<suite>
+<stat name="SeleniumTest" id="s1" pass="3" fail="0" skip="0">SeleniumTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

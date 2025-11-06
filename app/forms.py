@@ -22,7 +22,6 @@ class UserForm(FlaskForm):
         if user:
             raise ValidationError("Este e-mail já está cadastrado. Por favor, utilize outro.")
 
-
     def save(self):
         senha_hash = bcrypt.generate_password_hash(self.senha.data).decode('utf-8')
         user = User(
@@ -35,7 +34,6 @@ class UserForm(FlaskForm):
         db.session.add(user)
         db.session.commit()
         return user
-
 
 class LoginForm(FlaskForm):
     email = StringField('E-mail', validators=[DataRequired(), Email()])
