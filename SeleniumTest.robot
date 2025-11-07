@@ -8,14 +8,14 @@ ${URL_BASE}         http://127.0.0.1:5000
 ${URL_LOGIN}        ${URL_BASE}/
 ${URL_REGISTER}     ${URL_BASE}/cadastro
 ${URL_TURMA}        ${URL_BASE}/turma
-${URL_LOGOUT}       ${URL_BASE}/logout       # Definindo a URL de Logout
+${URL_LOGOUT}       ${URL_BASE}/logout 
 ${BROWSER}          chrome
 ${VALID_EMAIL}      joaodanielaraujo1@gmail.com
 ${VALID_NAME}       João
 ${VALID_SURNAME}    Daniel
 ${VALID_PASSWORD}   123
 ${SUCESS_MESSAGE}   Lista de Turmas 
-${LOGOUT_SUCCESS_TEXT}    Login               # Texto que aparece na página após o Logout (ex: Título da página de login)
+${LOGOUT_SUCCESS_TEXT}    Login 
     
 *** Keywords ***
 Efetuar Login
