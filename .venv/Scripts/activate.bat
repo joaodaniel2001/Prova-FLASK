@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set "VIRTUAL_ENV=C:\Users\joao_d_lima\Documents\GitHub\Prova-FLASK\.venv"
+set "VIRTUAL_ENV=C:\Users\kawa_aguiar\Documents\GitHub\Prova-FLASK\.venv"
 
 if not defined PROMPT set PROMPT=$P$G
 

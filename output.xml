@@ -1,224 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-11-06T09:13:04.608365" rpa="false" schemaversion="5">
-<suite id="s1" name="SeleniumTest" source="C:\Users\joao_d_lima\Documents\GitHub\Prova-FLASK\SeleniumTest.robot">
-<test id="s1-t1" name="Realizar o cadastro com credenciais válidas" line="32">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:04.844514" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/cadastro'.</msg>
-<arg>${URL_REGISTER}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:04.844274" elapsed="1.396229"/>
+<robot generator="Robot 7.3.2 (Python 3.13.2 on win32)" generated="2025-11-12T10:32:21.679665" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Mysql" source="C:\Users\kawa_aguiar\Documents\GitHub\Prova-FLASK\test_mysql.robot">
+<test id="s1-t1" name="Conectar E Consultar Banco" line="11">
+<kw name="Should Exist" owner="OperatingSystem">
+<msg time="2025-11-12T10:32:21.746749" level="INFO" html="true">Path '&lt;a href="file://C:\Users\kawa_aguiar\Documents\GitHub\Prova-FLASK\instance\saep.db"&gt;C:\Users\kawa_aguiar\Documents\GitHub\Prova-FLASK\instance\saep.db&lt;/a&gt;' exists.</msg>
+<arg>${DBFILE}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.742950" elapsed="0.003871"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.241077" elapsed="0.043152"/>
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-11-12T10:32:21.747284" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-11-12T10:32:21.747362" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-11-12T10:32:21.750606" level="INFO">Connect to DB using : sqlite3.connect(database='C:/Users/kawa_aguiar/Documents/GitHub/Prova-FLASK/instance/saep.db')</msg>
+<arg>${DBDRIVER}</arg>
+<arg>database=${DBFILE}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.747076" elapsed="0.003819"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.284874" level="INFO">Typing text 'João' into text field 'id=nome'.</msg>
-<arg>id=nome</arg>
-<arg>${VALID_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.284510" elapsed="0.148823"/>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-11-12T10:32:21.751260" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT name FROM sqlite_master WHERE type='table';&lt;/code&gt;</msg>
+<msg time="2025-11-12T10:32:21.751579" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T10:32:21.751632" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;name&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;alembic_version&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;user&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;turma&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;atividade&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-11-12T10:32:21.751732" level="INFO">${tabelas} = [('alembic_version',), ('user',), ('turma',), ('atividade',)]</msg>
+<var>${tabelas}</var>
+<arg>SELECT name FROM sqlite_master WHERE type='table';</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.751124" elapsed="0.000629"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.434052" level="INFO">Typing text 'Daniel' into text field 'id=sobrenome'.</msg>
-<arg>id=sobrenome</arg>
-<arg>${VALID_SURNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.433672" elapsed="0.072013"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-12T10:32:21.752048" level="INFO">Tabelas encontradas: [('alembic_version',), ('user',), ('turma',), ('atividade',)]</msg>
+<arg>Tabelas encontradas: ${tabelas}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.751935" elapsed="0.000149"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.506283" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
-<arg>id=email</arg>
-<arg>${VALID_EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.506003" elapsed="0.149117"/>
+<kw name="Table Should Exist">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-11-12T10:32:21.752866" level="INFO">${nomes} = ['alembic_version', 'user', 'turma', 'atividade']</msg>
+<var>${nomes}</var>
+<arg>[t[0] for t in ${lista}]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.752630" elapsed="0.000259"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.655884" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
-<arg>id=senha</arg>
-<arg>${VALID_PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.655501" elapsed="0.071452"/>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${nomes}</arg>
+<arg>${tabela}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.752967" elapsed="0.000120"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.728934" level="INFO">Typing text '123' into text field 'id=confirmacao_senha'.</msg>
-<arg>id=confirmacao_senha</arg>
-<arg>${VALID_PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.728432" elapsed="0.084332"/>
+<arg>${TABELA}</arg>
+<arg>${tabelas}</arg>
+<status status="PASS" start="2025-11-12T10:32:21.752347" elapsed="0.000792"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:06.813410" level="INFO">Clicking button 'id=btnSubmit'.</msg>
-<arg>id=btnSubmit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.813131" elapsed="0.077254"/>
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-11-12T10:32:21.753467" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM user;&lt;/code&gt;</msg>
+<msg time="2025-11-12T10:32:21.754038" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T10:32:21.754075" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;COUNT(*)&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;6&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-11-12T10:32:21.754149" level="INFO">${resultado} = [(6,)]</msg>
+<var>${resultado}</var>
+<arg>SELECT COUNT(*) FROM ${TABELA};</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.753305" elapsed="0.000863"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${SUCESS_MESSAGE}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-06T09:13:06.890704" elapsed="0.505947"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-12T10:32:21.754844" level="INFO">Total de registros em user: 6</msg>
+<arg>Total de registros em ${TABELA}: ${resultado[0][0]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.754443" elapsed="0.000441"/>
 </kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:07.401638" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
-<arg>${URL_TURMA}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:07.397288" elapsed="0.004480"/>
+<kw name="Disconnect From Database" owner="DatabaseLibrary">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-11-12T10:32:21.755058" elapsed="0.000113"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-06T09:13:07.402001" elapsed="2.122774"/>
-</kw>
-<tag>Cadastro</tag>
-<tag>Sucesso</tag>
-<tag>UI</tag>
-<status status="PASS" start="2025-11-06T09:13:04.843324" elapsed="4.681846"/>
+<doc>Testa se a tabela 'user' existe e possui registros</doc>
+<status status="PASS" start="2025-11-12T10:32:21.742241" elapsed="0.013104"/>
 </test>
-<test id="s1-t2" name="Realizar um Login com credenciais válidas" line="58">
-<kw name="Efetuar Login">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:09.527029" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/'.</msg>
-<arg>${URL_LOGIN}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:09.526820" elapsed="1.269053"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-06T09:13:10.796179" elapsed="0.037222"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:10.834015" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
-<arg>id=email</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:10.833680" elapsed="0.195482"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:11.029672" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
-<arg>id=senha</arg>
-<arg>${senha}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:11.029371" elapsed="0.072910"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:11.102627" level="INFO">Clicking button 'id=btnSubmit'.</msg>
-<arg>id=btnSubmit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:11.102459" elapsed="0.075973"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${SUCESS_MESSAGE}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-06T09:13:11.178663" elapsed="0.497260"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:11.682589" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
-<arg>${URL_TURMA}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:11.676066" elapsed="0.006645"/>
-</kw>
-<arg>${VALID_EMAIL}</arg>
-<arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-11-06T09:13:09.526497" elapsed="2.156435"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-06T09:13:11.683368" elapsed="2.123052"/>
-</kw>
-<tag>Login</tag>
-<tag>Sucesso</tag>
-<tag>UI</tag>
-<status status="PASS" start="2025-11-06T09:13:09.526007" elapsed="4.281467"/>
-</test>
-<test id="s1-t3" name="Realizar Logout com Sucesso" line="67">
-<kw name="Efetuar Login">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:13.813843" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:5000/'.</msg>
-<arg>${URL_LOGIN}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:13.813035" elapsed="1.195818"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.009091" elapsed="0.122431"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:15.131935" level="INFO">Typing text 'joaodanielaraujo1@gmail.com' into text field 'id=email'.</msg>
-<arg>id=email</arg>
-<arg>${email}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.131695" elapsed="0.117018"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:15.249132" level="INFO">Typing text '123' into text field 'id=senha'.</msg>
-<arg>id=senha</arg>
-<arg>${senha}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.248909" elapsed="0.081178"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:15.330650" level="INFO">Clicking button 'id=btnSubmit'.</msg>
-<arg>id=btnSubmit</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.330443" elapsed="0.376761"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${SUCESS_MESSAGE}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.707458" elapsed="0.017502"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:15.730612" level="INFO">Current location is 'http://127.0.0.1:5000/turma'.</msg>
-<arg>${URL_TURMA}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.725109" elapsed="0.005579"/>
-</kw>
-<arg>${VALID_EMAIL}</arg>
-<arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-11-06T09:13:13.811580" elapsed="1.919193"/>
-</kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-11-06T09:13:15.731376" level="INFO">Clicking link 'Sair'.</msg>
-<arg>Sair</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.731121" elapsed="0.135070"/>
-</kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>${LOGOUT_SUCCESS_TEXT}</arg>
-<arg>timeout=5s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.866471" elapsed="0.012414"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-11-06T09:13:15.879184" elapsed="2.133797"/>
-</kw>
-<tag>Logout</tag>
-<tag>Sucesso</tag>
-<tag>UI</tag>
-<status status="PASS" start="2025-11-06T09:13:13.809773" elapsed="4.203748"/>
-</test>
-<doc>Teste para verificar o sistema de Cadastro e Login</doc>
-<status status="PASS" start="2025-11-06T09:13:04.610067" elapsed="13.404360"/>
+<status status="PASS" start="2025-11-12T10:32:21.681099" elapsed="0.075236"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Cadastro</stat>
-<stat pass="1" fail="0" skip="0">Login</stat>
-<stat pass="1" fail="0" skip="0">Logout</stat>
-<stat pass="3" fail="0" skip="0">Sucesso</stat>
-<stat pass="3" fail="0" skip="0">UI</stat>
 </tag>
 <suite>
-<stat name="SeleniumTest" id="s1" pass="3" fail="0" skip="0">SeleniumTest</stat>
+<stat name="Test Mysql" id="s1" pass="1" fail="0" skip="0">Test Mysql</stat>
 </suite>
 </statistics>
 <errors>
